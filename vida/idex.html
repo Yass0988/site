@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Um Mês de Namoro - Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url('https://www.example.com/background.jpg') no-repeat center center fixed; /* Substitua esta URL pela URL da sua imagem */
+            background-size: cover;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #ff69b4;
+        }
+        .login-form {
+            margin-bottom: 20px;
+        }
+        .login-form input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff69b4;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .login-form button:hover {
+            background-color: #ff1493;
+        }
+        .message {
+            color: red;
+            margin-top: 10px;
+        }
+        .message img {
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Um Mês de Namoro</h1>
+        <form class="login-form" onsubmit="return handleLogin(event)">
+            <input type="text" id="username" placeholder="Usuário" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit">Login</button>
+            <button type="button" onclick="handleCreateAccount()">Criar Conta</button>
+        </form>
+        <div class="message" id="message"></div>
+    </div>
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const message = document.getElementById('message');
+            
+            if (username === 'Mariana' && password === '09.07.2024') {
+                window.location.href = 'presentes.html';
+            } else {
+                message.textContent = 'Tente novamente, amor.';
+            }
+        }
+
+        function handleCreateAccount() {
+            const message = document.getElementById('message');
+            message.innerHTML = 'Meu coração já é da minha mulher. <img src="https://www.example.com/heart.png" alt="Heart">'; // Substitua esta URL pela URL da sua imagem
+        }
+    </script>
+</body>
+</html>
